@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Contact Us</title>
+<style>
+    form { width: 350px; margin: auto; }
+    label { display: block; margin-top: 10px; }
+    input, textarea { width: 100%; padding: 8px; }
+    .error { color: red; font-size: 14px; }
+</style>
+</head>
+
+<body>
+<h2>Contact Us</h2>
+
+<form id="contactForm" onsubmit="return validateForm()">
+    <label>Name:</label>
+    <input type="text" id="name" required>
+
+    <label>Email:</label>
+    <input type="email" id="email" required>
+
+    <label>Subject:</label>
+    <input type="text" id="subject" required>
+
+    <label>Message:</label>
+    <textarea id="message" rows="5" required></textarea>
+
+    <button type="submit">Send</button>
+</form>
+
+<p id="response"></p>
+
+<script>
+function validateForm() {
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const subject = document.getElementById("subject").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    if (!name || !email || !subject || !message) {
+        document.getElementById("response").innerHTML =
+            "<span class='error'>All fields must be filled out.</span>";
+        return false;
+    }
+
+    document.getElementById("response").innerHTML =
+        "Your message has been received! We will respond soon.";
+
+    return false;
+}
+</script>
+
+</body>
+</html>

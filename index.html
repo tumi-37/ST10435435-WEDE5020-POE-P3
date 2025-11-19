@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>My Photography Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <header>
+        <h1>My Photography Portfolio</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="enquiry.html">Enquiry</a></li>
+
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I am a passionate photographer dedicated to capturing moments that tell authentic stories. With a creative eye for detail and a deep love for visual expression, I transform everyday scenes into compelling images that evoke emotion and connection. My work blends artistic vision with technical precision, allowing me to create photographs that feel timeless, expressive, and true to life.
+
+Specializing in portrait, event, and lifestyle photography, I aim to highlight the natural beauty and personality of every subject I work with. Whether I’m documenting a milestone, creating visual content for brands, or exploring creative concepts, my goal is always the same: to deliver images that feel meaningful, memorable, and uniquely crafted.
+
+Driven by curiosity and inspired by the world around me, I continue to refine my craft and push creative boundaries. Photography, for me, is more than a profession—it is a way of seeing, feeling, and preserving the stories that matter most. </p>
+    </section>
+
+    <section id="portfolio">
+        <h2>My Work</h2>
+        <div class="gallery">
+            <div class="photo 1"><img src="Images/_MG_0225.JPG" alt="Photo 1" width="400" height="600"  /></div>
+            <div class="photo 2"><img src="Images/_MG_0173.JPG" alt="Photo 2" width="400" height="600"  /></div>
+            <div class="photo 3"><img src="Images/©Tumelo Mophiring_IC22-02_Market PhotoWorkshop_02.JPG" alt="Photo 3" width="400" height="600"  /></div>
+            <div class="photo 4"><img src="Images/_MG_7502.JPG" alt="Photo 4" width="400" height="700"  /></div>
+            <div class="photo 5"><img src="Images/©Tumelo Mophiring.jpg.JPG" alt="Photo 5" width="700" height="600"  /></div>
+            <div class="photo 6"><img src="Images/©Tumelo Mophiring.jpg (7).jpg" alt="Photo 6" width="700" height="600"  /></div>
+            <div class="photo 7"><img src="Images/Tumelo Mophiring JoHustleBurg.jpg" alt="Photo 7" width="700" height="600"  /></div>
+            <div class="photo 8"><img src="Images/©tumelo_m.JPG" alt="Photo 8" width="700" height="600"  /></div>
+        </div>
+    </section>
+
+    
+    <section id="contact">
+  <h2>Contact Me</h2>
+
+  <form id="contactForm" class="contact-form" onsubmit="return validateForm()">
+    
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="subject">Subject:</label>
+    <input type="text" id="subject" name="subject" required>
+
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" rows="6" required></textarea>
+
+    <button type="submit">Send</button>
+  </form>
+
+  <p id="response"></p>
+
+  <p>Phone: 068 390 0000</p>
+  <p>Follow me on 
+      <a href="#">Instagram</a>, 
+      <a href="#">Facebook</a>
+  </p>
+</section>
+
+<footer>
+  <p>&copy; 2024 My Photography Portfolio</p>
+</footer>
+
+<script>
+function validateForm() {
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const subject = document.getElementById("subject").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    if (!name || !email || !subject || !message) {
+        document.getElementById("response").innerHTML =
+            "<span style='color:red;'>All fields must be filled out.</span>";
+        return false;
+    }
+
+    document.getElementById("response").innerHTML =
+        "Your message has been received! We will respond soon.";
+
+    return false; // Prevent real form submission
+}
+</script>
+<head>
+    <script src="script.js" defer></script>
+</head>
